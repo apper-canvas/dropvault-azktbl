@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import MainFeature from '../components/MainFeature';
 import getIcon from '../utils/iconUtils';
@@ -130,14 +129,13 @@ function Home() {
               </p>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+              <Link to="/terms" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
                 Terms
-              </a>
+              </Link>
               <a href="#" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
                 Privacy
               </a>
-                  <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
-                Contact
+              <a href="#" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
               </a>
             </div>
           </div>
