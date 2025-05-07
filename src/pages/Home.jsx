@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import MainFeature from '../components/MainFeature';
 import getIcon from '../utils/iconUtils';
@@ -146,3 +147,4 @@ function Home() {
 }
 
 export default Home;
+              <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
