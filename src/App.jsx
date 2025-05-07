@@ -26,13 +26,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-50 dark:bg-surface-900 text-surface-800 dark:text-surface-100 transition-colors duration-300">
+    <div className="min-h-screen bg-surface-50 dark:bg-surface-900 text-surface-800 dark:text-surface-100 transition-colors duration-300 relative">
       <div className="fixed top-4 right-4 z-50">
         <button
           onClick={toggleDarkMode}
-          className="p-2 rounded-full bg-surface-200 dark:bg-surface-700 hover:bg-surface-300 dark:hover:bg-surface-600 transition-colors"
+          className="p-2 rounded-full bg-white dark:bg-surface-800 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all duration-300 shadow-card hover:shadow-soft-lg"
           aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-        >
+          >
           {darkMode ? (
             <SunIcon className="w-5 h-5 text-yellow-400" />
           ) : (
@@ -48,17 +48,17 @@ function App() {
       
       <ToastContainer
         position="bottom-right"
-        autoClose={5000}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
         draggable
-        pauseOnHover
+        pauseOnHover={true}
         theme={darkMode ? "dark" : "light"}
-        toastClassName="!bg-surface-100 !dark:bg-surface-800 !text-surface-800 !dark:text-surface-100 !shadow-soft"
-        className="!z-[1000]"
+        toastClassName="!bg-white/90 !dark:bg-surface-800/90 !backdrop-blur-sm !text-surface-800 !dark:text-surface-100 !shadow-soft !rounded-xl !border !border-surface-200 !dark:border-surface-700/50 !font-medium"
+        className="!z-[9999]"
       />
     </div>
   );

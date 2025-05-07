@@ -121,17 +121,17 @@ function MainFeature() {
     <div className="flex flex-col lg:flex-row gap-8">
       {/* Sidebar */}
       <div className="w-full lg:w-64 order-2 lg:order-1">
-        <div className="card p-5 sticky top-20">
-          <h3 className="font-semibold text-lg mb-4">Storage</h3>
+        <div className="card p-6 sticky top-24">
+          <h3 className="font-semibold text-lg mb-5">Storage</h3>
           
           {/* Storage usage visualization */}
-          <div className="mb-6">
+          <div className="mb-8">
             <div className="flex justify-between text-sm mb-1">
               <span>32.5 GB used</span>
               <span>50 GB</span>
             </div>
-            <div className="h-2 bg-surface-200 dark:bg-surface-700 rounded-full overflow-hidden">
-              <div className="h-full bg-primary rounded-full" style={{ width: '65%' }}></div>
+            <div className="h-2.5 bg-surface-200 dark:bg-surface-700 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style={{ width: '65%' }}></div>
             </div>
             <p className="text-xs text-surface-500 mt-1">65% of your storage used</p>
           </div>
@@ -144,10 +144,10 @@ function MainFeature() {
                 <li key={folder}>
                   <button 
                     onClick={() => setSelectedFolder(folder)}
-                    className={`w-full text-left py-2 px-3 rounded-lg flex items-center text-sm transition-colors
+                    className={`w-full text-left py-2.5 px-3.5 rounded-xl flex items-center text-sm transition-all duration-200
                                ${selectedFolder === folder 
-                                 ? 'bg-primary/10 dark:bg-primary/20 text-primary' 
-                                 : 'hover:bg-surface-100 dark:hover:bg-surface-800 text-surface-700 dark:text-surface-300'
+                                 ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 font-medium shadow-sm' 
+                                 : 'hover:bg-surface-100 dark:hover:bg-surface-800 text-surface-700 dark:text-surface-300 hover:shadow-sm'
                                }`}
                   >
                     <FolderIcon className={`w-4 h-4 mr-2 ${selectedFolder === folder ? 'text-primary' : 'text-surface-500'}`} />
@@ -165,15 +165,15 @@ function MainFeature() {
         {/* Upload Zone */}
         <div 
           className={`
-            relative rounded-2xl border-2 border-dashed transition-all duration-200 mb-8
-            p-8 flex flex-col items-center justify-center text-center
+            relative rounded-3xl border-2 border-dashed transition-all duration-300 mb-10
+            p-10 flex flex-col items-center justify-center text-center
             ${isDragging 
-              ? 'border-primary bg-primary/5 dark:bg-primary/10' 
-              : 'border-surface-300 dark:border-surface-700 hover:border-primary dark:hover:border-primary hover:bg-surface-50 dark:hover:bg-surface-800/50'
+              ? 'border-primary-500 bg-primary-50/70 dark:bg-primary-900/20 scale-[1.01] shadow-soft' 
+              : 'border-surface-300 dark:border-surface-700 hover:border-primary-400 dark:hover:border-primary-500 hover:bg-surface-50/80 dark:hover:bg-surface-800/50 hover:scale-[1.005] hover:shadow-sm'
             }
           `}
-          onDragEnter={handleDragEnter}
-          onDragOver={handleDragOver}
+          onDragEnter={handleDragEnter} 
+          onDragOver={handleDragOver} 
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
@@ -184,25 +184,26 @@ function MainFeature() {
             onChange={handleFileInputChange}
             className="hidden"
           />
-          
-          <div className="w-16 h-16 rounded-full neumorphic flex items-center justify-center mb-4">
-            <UploadCloudIcon className="w-8 h-8 text-primary" />
+
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-900/50 dark:to-primary-800/30 shadow-md flex items-center justify-center mb-6 group-hover:shadow-lg transition-all">
+            <UploadCloudIcon className={`w-10 h-10 ${isDragging ? 'text-primary-600 dark:text-primary-400 animate-bounce' : 'text-primary dark:text-primary-400'}`} />
           </div>
           
-          <h3 className="text-xl font-semibold mb-2">
-            {isDragging ? 'Drop files here' : 'Upload your files'}
+          <h3 className="text-2xl font-semibold mb-3">
+            {isDragging ? 'Drop files here!' : 'Upload your files'}
           </h3>
           
-          <p className="text-surface-600 dark:text-surface-400 mb-6 max-w-md">
+          <p className="text-surface-600 dark:text-surface-400 mb-8 max-w-md">
             Drag and drop your files here, or click the button below to browse your files.
-            Uploads will be saved to your <strong>{selectedFolder}</strong> folder.
+            Uploads will be saved to your <span className="font-semibold text-primary-600 dark:text-primary-400">{selectedFolder}</span> folder.
           </p>
           
           <button
             onClick={handleButtonClick}
-            className="btn btn-primary py-3 px-6 text-base shadow-sm"
+            className="btn btn-gradient py-3 px-8 text-base shadow-md hover:shadow-lg transition-all"
           >
-            Select Files
+            <UploadCloudIcon className="w-5 h-5 mr-2" />
+            Browse Files
           </button>
         </div>
         
@@ -211,9 +212,9 @@ function MainFeature() {
           <h3 className="font-semibold text-lg mb-4">Your Uploads</h3>
           
           {uploadedFiles.length === 0 ? (
-            <div className="text-center py-16">
-              <div className="w-16 h-16 neumorphic rounded-full mx-auto flex items-center justify-center mb-4">
-                <FileIcon className="w-8 h-8 text-surface-400 dark:text-surface-500" />
+            <div className="text-center py-20">
+              <div className="w-20 h-20 rounded-2xl bg-surface-100 dark:bg-surface-800 mx-auto flex items-center justify-center mb-6 shadow-sm">
+                <FileIcon className="w-10 h-10 text-surface-400 dark:text-surface-500 opacity-70" />
               </div>
               <p className="text-surface-600 dark:text-surface-400">
                 No files uploaded yet. Drop some files above to get started.
@@ -229,41 +230,48 @@ function MainFeature() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, x: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="relative flex items-center p-4 rounded-xl border border-surface-200 dark:border-surface-700
-                              hover:bg-surface-50 dark:hover:bg-surface-800/70 group transition-all"
+                    className="relative flex items-center p-5 rounded-2xl border border-surface-200 dark:border-surface-700
+                              hover:bg-white/80 dark:hover:bg-surface-800/70 group transition-all duration-200
+                              hover:shadow-md hover:scale-[1.01] hover:border-surface-300 dark:hover:border-surface-600"
                   >
-                    <div className="mr-4 flex-shrink-0">
-                      {getFileIcon(file.type)}
+                    <div className="mr-5 flex-shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-surface-100 dark:bg-surface-800 flex items-center justify-center group-hover:bg-surface-50 dark:group-hover:bg-surface-700 transition-colors">
+                        {getFileIcon(file.type)}
+                      </div>
                     </div>
                     
                     <div className="flex-grow min-w-0">
-                      <div className="flex items-center mb-1">
-                        <h4 className="font-medium text-surface-900 dark:text-surface-100 truncate">
+                      <div className="flex items-center mb-1.5">
+                        <h4 className="font-medium text-surface-900 dark:text-surface-100 truncate group-hover:text-primary-700 dark:group-hover:text-primary-400 transition-colors">
                           {file.name}
                         </h4>
                         {file.isUploaded && (
                           <span className="ml-2 flex-shrink-0">
-                            <CheckCircleIcon className="w-4 h-4 text-green-500" />
+                            <CheckCircleIcon className="w-4 h-4 text-success dark:text-success-light" />
                           </span>
                         )}
                       </div>
                       
-                      <div className="flex items-center text-xs text-surface-500">
-                        <span className="mr-3">{formatFileSize(file.size)}</span>
-                        <span className="mr-3">{file.folder}</span>
-                        <span>
+                      <div className="flex items-center text-xs text-surface-500 dark:text-surface-400">
+                        <span className="mr-3 badge badge-primary">
+                          {formatFileSize(file.size)}
+                        </span>
+                        <span className="mr-3 flex items-center">
+                          <FolderIcon className="w-3 h-3 mr-1 opacity-70" />
+                          {file.folder}
+                        </span>
+                        <span className="opacity-70">
                           {new Date(file.lastModified).toLocaleDateString()}
                         </span>
                       </div>
                     </div>
                     
                     <button
-                      onClick={() => removeFile(file.id)}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-full hover:bg-surface-200 dark:hover:bg-surface-700"
-                      aria-label="Remove file"
-                    >
-                      <TrashIcon className="w-4 h-4 text-surface-500 hover:text-accent" />
-                    </button>
+                       onClick={() => removeFile(file.id)}
+                       className="opacity-0 group-hover:opacity-100 transition-all duration-200 p-2 rounded-full hover:bg-accent-light/10 dark:hover:bg-accent-dark/20 hover:text-accent dark:hover:text-accent-light"
+                       aria-label="Remove file">
+                       <TrashIcon className="w-5 h-5" />
+                     </button>
                   </motion.div>
                 ))}
               </AnimatePresence>
