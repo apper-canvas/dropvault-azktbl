@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 import getIcon from './utils/iconUtils';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       
