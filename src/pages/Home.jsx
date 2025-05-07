@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import MainFeature from '../components/MainFeature';
 import getIcon from '../utils/iconUtils';
 
