@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 import MainFeature from '../components/MainFeature';
 import getIcon from '../utils/iconUtils';
 
@@ -137,7 +137,7 @@ function Home() {
               </a>
               <a href="#" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
               </a>
-            </div>
+              <Link to="/privacy" className="block text-surface-500 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">Privacy</Link>
           </div>
         </div>
       </footer>
