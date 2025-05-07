@@ -129,6 +129,7 @@
     @apply shadow-neu-light dark:shadow-neu-dark
            bg-surface-100 dark:bg-surface-800
            rounded-2xl;
+  }
   
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
@@ -145,7 +146,6 @@
     @apply block px-4 py-2 text-sm text-surface-700 dark:text-surface-300
            hover:bg-surface-100 dark:hover:bg-surface-700 transition-colors;
   }
-  }
 }
 
 @layer utilities {
@@ -156,7 +156,8 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
-  
+  }
+    
   .mask-radial-faded {
     mask-image: radial-gradient(circle at center, black, transparent 80%);
   }
@@ -177,8 +178,41 @@
   .animate-pulse-slow {
     animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+  
+  .bg-grid-overlay {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   }
-}
+  
+  .dark .bg-grid-overlay {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+  
+  .floating-animation {
+    animation: floating 6s ease-in-out infinite;
+  }
+  
+  .rotating-slow {
+    animation: rotating 18s linear infinite;
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  @keyframes rotating {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  }
+
+/* Fix syntax error by removing extra closing bracket */
 
 /* Import React Toastify CSS */
 @import 'react-toastify/dist/ReactToastify.css';
