@@ -147,4 +147,3 @@ function Home() {
 }
 
 export default Home;
-              <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
