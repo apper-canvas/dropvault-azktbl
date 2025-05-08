@@ -223,13 +223,12 @@ function MainFeature() {
             <div className="text-center py-20">
               <div className="w-20 h-20 rounded-2xl bg-surface-100 dark:bg-surface-800 mx-auto flex items-center justify-center mb-6 shadow-sm">
                 <FileIcon className="w-10 h-10 text-surface-400 dark:text-surface-500 opacity-70" />
-        <div className="card p-8 shadow-soft-lg border border-surface-200 dark:border-surface-700">
-          <h3 className="font-semibold text-xl mb-6 border-b border-surface-100 dark:border-surface-800 pb-4">Your Uploads</h3>
+              </div>
+              <p className="text-lg text-surface-600 dark:text-surface-400">
                 No files uploaded yet. Drop some files above to get started.
               </p>
-            <div className="text-center py-24">
-              <div className="w-24 h-24 rounded-2xl bg-surface-100 dark:bg-surface-800 mx-auto flex items-center justify-center mb-6 shadow-sm">
-                <FileIcon className="w-12 h-12 text-surface-400 dark:text-surface-500 opacity-70" />
+            </div>
+          ) : (
               <AnimatePresence>
               <p className="text-lg text-surface-600 dark:text-surface-400">
                   <motion.div
