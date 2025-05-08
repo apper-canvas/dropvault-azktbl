@@ -135,7 +135,7 @@ function Home() {
                     <p className="text-surface-600 dark:text-surface-400">
                       Easily organize your files into categories with our intuitive drag-and-drop interface.
                     </p>
-                </div>
+                  </div>
                 </div>
                 <div className="card p-6 flex items-start gap-4 card-hover transition-all hover:-translate-y-2 duration-300">
                   <div className="w-14 h-14 rounded-xl bg-accent-light/20 dark:bg-accent-dark/30 flex items-center justify-center shadow-md">
@@ -149,6 +149,7 @@ function Home() {
                   </div>
                 </div>
               </div>
+            </div>
           </section>
 
           {/* Main Feature Section */}
