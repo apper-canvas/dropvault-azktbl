@@ -114,28 +114,27 @@ function Home() {
                             </span>
                             {item}
                           </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                    </div>
-                    <UploadIcon className="w-7 h-7 text-primary-600 dark:text-primary-400" />
-                  </p>
-                
+
                 {/* Decorative circle in background */}
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"> 
-            
+                <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-50 dark:bg-primary-900/20 rounded-full opacity-80 rotating-slow"></div>
+              </div>
+
               {/* Supporting feature cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="card p-6 flex items-start gap-4 card-hover transition-all hover:-translate-y-2 duration-300">
                   <div className="w-14 h-14 rounded-xl bg-secondary-100 dark:bg-secondary-900/50 flex items-center justify-center shadow-md">
                     <LayersIcon className="w-6 h-6 text-secondary-600 dark:text-secondary-400" />
-                    <LayersIcon className="w-7 h-7 text-secondary-600 dark:text-secondary-400" />
+                  </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Organize & Categorize</h3>
                     <p className="text-surface-600 dark:text-surface-400">
                       Easily organize your files into categories with our intuitive drag-and-drop interface.
                     </p>
-                  </div>
                 </div>
                 
                 <div className="card p-6 flex items-start gap-4 card-hover transition-all hover:-translate-y-2 duration-300">
@@ -147,8 +146,9 @@ function Home() {
                     <p className="text-surface-600 dark:text-surface-400">
                       Share your files securely with customizable permissions and expiration dates.
                     </p>
+                  </div>
                 </div>
-              </div>
+                </div>
             </div>
           </section>
 
@@ -166,6 +166,7 @@ function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-surface-600 dark:text-surface-400 text-sm">
+            </div>
                 © {new Date().getFullYear()} DropVault. All rights reserved.
               </p>
             <div className="flex space-x-6">
