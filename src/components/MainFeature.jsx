@@ -229,13 +229,13 @@ function MainFeature() {
               </p>
             </div>
           ) : (
-              <AnimatePresence>
-              <p className="text-lg text-surface-600 dark:text-surface-400">
+            <AnimatePresence>
+              <div className="space-y-5">
+                {uploadedFiles.map(file => (
                   <motion.div
                     key={file.id}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-            <div className="space-y-5">
                     transition={{ duration: 0.2 }}
                     className="relative flex items-center p-5 rounded-2xl border border-surface-200 dark:border-surface-700
                               hover:bg-white/80 dark:hover:bg-surface-800/70 group transition-all duration-200
@@ -243,24 +243,22 @@ function MainFeature() {
                   >
                     <div className="mr-5 flex-shrink-0">
                       <div className="w-12 h-12 rounded-xl bg-surface-100 dark:bg-surface-800 flex items-center justify-center group-hover:bg-surface-50 dark:group-hover:bg-surface-700 transition-colors">
-                    transition={{ duration: 0.3 }}
-                    className="relative flex items-center p-6 rounded-2xl border border-surface-200 dark:border-surface-700
-                              hover:bg-white dark:hover:bg-surface-800/90 group transition-all duration-300
-                              hover:shadow-lg hover:scale-[1.02] hover:border-surface-300 dark:hover:border-surface-600"
+                        {getFileIcon(file.type)}
+                      </div>
+                    </div>
                     <div className="flex-grow min-w-0">
                       <div className="flex items-center mb-1.5">
-                      <div className="w-14 h-14 rounded-xl bg-surface-100 dark:bg-surface-800 flex items-center justify-center group-hover:bg-surface-50 dark:group-hover:bg-surface-700 transition-colors shadow-sm group-hover:shadow-md">
+                        <h4 className="font-semibold text-surface-900 dark:text-surface-100 truncate group-hover:text-primary-700 dark:group-hover:text-primary-400 transition-colors">
                           {file.name}
                         </h4>
                         {file.isUploaded && (
                           <span className="ml-2 flex-shrink-0">
                             <CheckCircleIcon className="w-4 h-4 text-success dark:text-success-light" />
-                      <div className="flex items-center mb-2">
-                        <h4 className="font-semibold text-surface-900 dark:text-surface-100 truncate group-hover:text-primary-700 dark:group-hover:text-primary-400 transition-colors">
-                      </div>
-                      
-                      <div className="flex items-center text-xs text-surface-500 dark:text-surface-400">
-                          <span className="ml-2 flex-shrink-0 animate-pulse-slow">
+                           </span>
+                         )}
+                       </div>
+                       <div className="flex items-center text-xs text-surface-500 dark:text-surface-400">
+                         <span className="mr-3">
                           {formatFileSize(file.size)}
                         </span>
                         <span className="mr-3 flex items-center">
@@ -291,3 +289,4 @@ function MainFeature() {
 }
 
 export default MainFeature;
+                ))}
