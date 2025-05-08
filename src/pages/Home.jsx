@@ -136,7 +136,7 @@ function Home() {
                       Easily organize your files into categories with our intuitive drag-and-drop interface.
                     </p>
                 </div>
-                
+                </div>
                 <div className="card p-6 flex items-start gap-4 card-hover transition-all hover:-translate-y-2 duration-300">
                   <div className="w-14 h-14 rounded-xl bg-accent-light/20 dark:bg-accent-dark/30 flex items-center justify-center shadow-md">
                     <ShieldIcon className="w-7 h-7 text-accent dark:text-accent-light" />
@@ -149,7 +149,6 @@ function Home() {
                   </div>
                 </div>
                 </div>
-            </div>
           </section>
 
           {/* Main Feature Section */}
@@ -166,9 +165,9 @@ function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-surface-600 dark:text-surface-400 text-sm">
-            </div>
                 © {new Date().getFullYear()} DropVault. All rights reserved.
               </p>
+            </div>
             <div className="flex space-x-6">
               <Link to="/terms" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">Terms</Link>
               <Link to="/privacy" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">Privacy</Link>
