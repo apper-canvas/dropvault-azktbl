@@ -229,14 +229,14 @@ function MainFeature() {
               </p>
             </div>
           ) : (
-            <AnimatePresence>
-              <div className="space-y-5">
+            <div className="space-y-5">
+              <AnimatePresence>
                 {uploadedFiles.map(file => (
                   <motion.div
                     key={file.id}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
+                    exit={{ opacity: 0, y: -10 }}
                     className="relative flex items-center p-5 rounded-2xl border border-surface-200 dark:border-surface-700
                               hover:bg-white/80 dark:hover:bg-surface-800/70 group transition-all duration-200
                               hover:shadow-md hover:scale-[1.01] hover:border-surface-300 dark:hover:border-surface-600"
@@ -289,4 +289,3 @@ function MainFeature() {
 }
 
 export default MainFeature;
-                ))}
