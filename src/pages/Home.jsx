@@ -35,23 +35,19 @@ function Home() {
           </div>
           
           <nav className="flex items-center gap-4">
-            <a 
-              href="https://github.com" 
+            <a href="https://github.com" 
               target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-outline py-2 px-4 text-sm"
               aria-label="View source code on GitHub"
             >
-              <GithubIcon 
-                className="w-4 h-4 mr-2"
-                aria-hidden="true"
-              />
+              <GithubIcon className="w-4 h-4 mr-2" aria-hidden="true" />
               Source
             </a>
             <a
               href="#features"
               className="btn btn-primary py-2 px-4 text-sm group"
             >
-              <UploadIcon className="w-4 h-4 mr-2 transition-transform group-hover:translate-y-[-2px]" />
               <UploadIcon className="w-4 h-4 mr-2" />
               Start Uploading
             </a>
@@ -60,10 +56,9 @@ function Home() {
       </header>
 
       {/* Main Content */}
-        <div className="container-custom relative">
+      <main>
         <div className="container-custom">
           <section className="mb-32 text-center relative">
-            {/* Decorative elements */}
             <div className="absolute -left-24 top-1/3 w-40 h-40 bg-primary-400/5 dark:bg-primary-400/10 rounded-full blur-2xl"></div>
             <div className="absolute -right-20 top-1/4 w-60 h-60 bg-secondary-400/5 dark:bg-secondary-400/10 rounded-full blur-3xl"></div>
             <div className="absolute left-1/4 bottom-0 w-20 h-20 bg-accent-light/5 dark:bg-accent-light/10 rounded-full blur-xl"></div>
@@ -76,17 +71,14 @@ function Home() {
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
               Securely manage files with 
-              <div className="inline-block relative mx-2">
+              <span className="inline-block relative mx-2">
                 <span className="gradient-text relative z-10"> drag-and-drop </span>
                 <div className="absolute -bottom-2 left-0 right-0 h-3 bg-primary-200/50 dark:bg-primary-800/30 -rotate-1 rounded-full blur-sm -z-0"></div>
-              </div>
-              <span className="gradient-text"> drag-and-drop </span>
+              </span>
               simplicity
-            
+            </h2>
             <p className="text-xl md:text-2xl text-surface-600 dark:text-surface-300 max-w-3xl mx-auto mb-10 leading-relaxed">
               Upload, organize, and share your files securely with a beautiful,
-              intuitive interface designed for modern professionals.
-              intuitive interface - designed for professionals who value efficiency.
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4 mb-16">
               <a href="#features" className="btn btn-primary py-3.5 px-8 text-base font-medium shadow-lg shadow-primary/20 dark:shadow-primary/10 hover:scale-105 transition-all duration-300">
@@ -94,7 +86,7 @@ function Home() {
                 Start Uploading
               </a>
               <a href="#features" className="btn btn-outline py-3.5 px-8 text-base font-medium hover:scale-105 transition-all duration-300">
-                Learn More
+                Learn More 
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -122,16 +114,15 @@ function Home() {
                             </span>
                             {item}
                           </li>
-                        ))}
-                      </ul>
+                  </div>
+                </div>
                     </div>
                     <UploadIcon className="w-7 h-7 text-primary-600 dark:text-primary-400" />
                   </p>
                 
                 {/* Decorative circle in background */}
-                <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-50 dark:bg-primary-900/20 rounded-full opacity-80 rotating-slow"></div>
-                <div className="absolute -left-10 -top-10 w-40 h-40 bg-secondary-50 dark:bg-secondary-900/20 rounded-full opacity-50"></div>
-              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"> 
             
               {/* Supporting feature cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -142,21 +133,20 @@ function Home() {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Organize & Categorize</h3>
                     <p className="text-surface-600 dark:text-surface-400">
-                  <p className="text-surface-600 dark:text-surface-400">
+                      Easily organize your files into categories with our intuitive drag-and-drop interface.
                     </p>
                   </div>
-                  </p>
+                </div>
+                
                 <div className="card p-6 flex items-start gap-4 card-hover transition-all hover:-translate-y-2 duration-300">
                   <div className="w-14 h-14 rounded-xl bg-accent-light/20 dark:bg-accent-dark/30 flex items-center justify-center shadow-md">
-                  <div className="w-14 h-14 rounded-2xl bg-accent-light/20 dark:bg-accent-dark/30 flex items-center justify-center mb-5 shadow-sm transform group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
                     <ShieldIcon className="w-7 h-7 text-accent dark:text-accent-light" />
+                  </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Secure Sharing</h3>
                     <p className="text-surface-600 dark:text-surface-400">
-                  <p className="text-surface-600 dark:text-surface-400">
+                      Share your files securely with customizable permissions and expiration dates.
                     </p>
-                  </div>
-                  </p>
                 </div>
               </div>
             </div>
@@ -171,19 +161,16 @@ function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-surface-200 dark:border-surface-700 mt-20">
-      <footer className="py-10 border-t border-surface-200 dark:border-surface-700 mt-20 bg-white dark:bg-surface-900">
+      <footer className="py-10 border-t border-surface-200 dark:border-surface-700 mt-20">
+        <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-surface-600 dark:text-surface-400 text-sm">
                 © {new Date().getFullYear()} DropVault. All rights reserved.
               </p>
-              <Link to="/terms" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors font-medium px-3 py-1 hover:bg-surface-100 dark:hover:bg-surface-800 rounded-lg">
             <div className="flex space-x-6">
-              <Link to="/terms" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-              <Link to="/privacy" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors font-medium px-3 py-1 hover:bg-surface-100 dark:hover:bg-surface-800 rounded-lg">Privacy</Link>
-              </Link>
-              <Link to="/privacy" className="block text-surface-500 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">Privacy</Link>
+              <Link to="/terms" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">Terms</Link>
+              <Link to="/privacy" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">Privacy</Link>
             </div>
           </div>
         </div>
