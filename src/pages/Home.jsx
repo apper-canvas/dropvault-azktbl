@@ -5,7 +5,6 @@ import getIcon from '../utils/iconUtils';
 function Home() {
   // Icon declarations
   const DropboxIcon = getIcon("Database");
-import { Link } from 'react-router-dom';
   const GithubIcon = getIcon("Github");
   const UploadIcon = getIcon("Upload");
   const ShieldIcon = getIcon("Shield");

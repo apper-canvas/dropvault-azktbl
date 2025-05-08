@@ -183,7 +183,6 @@ function Privacy() {
             </section>
           </div>
         </div>
-        <div className="pb-16"></div>
       </div>
     </div>
   );
