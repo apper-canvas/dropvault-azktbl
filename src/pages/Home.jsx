@@ -37,17 +37,20 @@ function Home() {
           <nav className="flex items-center gap-4">
             <a 
               href="https://github.com" 
-              target="_blank" 
-              className="btn btn-outline py-2 px-4 text-sm hover:scale-105 transition-transform"
+              target="_blank"
               className="btn btn-outline py-2 px-4 text-sm"
               aria-label="View source code on GitHub"
             >
               <GithubIcon 
-                className="w-4 h-4 mr-2" 
+                className="w-4 h-4 mr-2"
                 aria-hidden="true"
               />
               Source
             </a>
+            <a
+              href="#features"
+              className="btn btn-primary py-2 px-4 text-sm group"
+            >
               <UploadIcon className="w-4 h-4 mr-2 transition-transform group-hover:translate-y-[-2px]" />
               <UploadIcon className="w-4 h-4 mr-2" />
               Start Uploading
